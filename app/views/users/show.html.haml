@@ -1,13 +1,11 @@
-=link_to "Back home", root_path
+-unless current_user
+  =link_to "Back home", root_path
 
 %h2= "#{@user.email}'s highlights"
 
 -if @highlights.present?
   %ul
-    -@highlights.each do |h|
-      %li
-        %div= "Title: #{h.title}"
-        %div= "Description: #{h.description}"
+    = render @highlights
 -else
   No highlights found!
 

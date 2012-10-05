@@ -1,10 +1,7 @@
 %h1 all highlights
 %ul
-  -@highlights.each do |h|
-    %li{style:"margin-bottom: 10px"}
-      %div= link_to "Title: #{h.title}", [h.user, h]
-      %div= "Description: #{h.description}"
-      %div= "By: #{h.user.email}"
+  =render @highlights
+
 
 %h1 all users
 %ul

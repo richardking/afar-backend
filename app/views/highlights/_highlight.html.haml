@@ -1,0 +1,5 @@
+- h = highlight
+%li{style: "margin-bottom: 10px"}
+  %div= link_to "Title: #{h.title}", [h.user, h]
+  %div= "Description: #{h.description}"
+  %div= "By: #{h.user.email}"
