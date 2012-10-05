@@ -1,0 +1,20 @@
+=link_to "Back home", root_path
+
+%h2= "#{@user.email}'s highlights"
+
+-if @highlights.present?
+  %ul
+    -@highlights.each do |h|
+      %li
+        %div= "Title: #{h.title}"
+        %div= "Description: #{h.description}"
+-else
+  No highlights found!
+
+-if current_user == @user
+  = form_for [current_user, @highlight] do |f|
+    =f.label :title
+    =f.text_field :title
+    =f.label :description
+    =f.text_field :description
+    =f.submit
