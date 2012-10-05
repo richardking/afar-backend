@@ -1,5 +1,9 @@
 class HighlightsController < ApplicationController
 
+  def index
+    @highlights = Highlight.all
+  end
+
   def create
     h = current_user.highlights.create(params[:highlight])
     if h.save

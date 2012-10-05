@@ -6,6 +6,8 @@ Backend::Application.routes.draw do
   resources :users do
     resources :highlights
   end
+
+  match "/highlights" => "highlights#index", :as => "highlights"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
